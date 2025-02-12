@@ -38,11 +38,11 @@
       <div class ="error">
         <div class ="error-box">
           <span><b><%= @book.errors.count %> errors prohibited this book from being saved:</b></span>
-          <ul>
-            <% @book.errors.full_messages.each do |message| %>
+          <% @book.errors.full_messages.each do |message| %>
+            <ul>
               <li><%= message %></li>
-            <% end %>
-          </ul>
+            </ul>
+          <% end %>
         </div>
         <%= form_with model: @book, url: '/books', method: :post  do |f| %>
           <div class ="error-new">

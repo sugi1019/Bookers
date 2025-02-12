@@ -1,8 +1,33 @@
+<!-- エディットページでバリデーションエラー検出時 -->
+<%if @book.errors.any? %>
+  <h1>Editing Book</h1>
+  <%= @book.errors.count %> errors prohibited this book from being saved:
+  <% @book.errors.full_messages.each do |message| %>
+    <ul>
+      <li><%= message %></li>
+    </ul>
+  <% end %>
+  <%= form_with model: @book do |f| %>
+    <p>Title</p>
+    <%= f.text_field :title %>
+    <p>Body</p>
+    <%= f.text_area :body %>
+    <p><%= f.submit 'Update Book' %></p>
+  <% end %>
+  <%= link_to "Show", book_path(@book.id) %> | <%= link_to "Back", books_path %>
 
-<div class="show">
+<% else %>
+  <!-- 通常時showページ -->
+  <div class="show">
  
-  <p><b>Title: </b><%= @book.title %></p>
-  <p><b>Body: </b><%= @book.body %></p>
+    <p><b>Title: </b><%= @book.title %></p>
+    <p><b>Body: </b><%= @book.body %></p>
 
-  <%= link_to "Edit", edit_book_path(@book.id) %> | <%= link_to "Back", books_path %>
-</div>
+    <%= link_to "Edit", edit_book_path(@book.id) %> | <%= link_to "Back", books_path %>
+  </div>
+
+<% end %>
+
+
+
+
