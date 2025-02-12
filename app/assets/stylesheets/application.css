@@ -96,44 +96,6 @@ td a {
   margin-top: 10px;
 }
 
-.error {
-  font-size: 13px;
-}
-
-.error-box {
-  width: 450px;
-  background-color: #f0f0f0;
-  border: 2px solid red;
-}
-
-.error-box span {
-  background-color: rgb(211, 22, 22);
-  display: block;
-  width: auto;
-  padding: 7px;
-  color: #fff;
-}
-
-.error-box ul {
-  padding: 30px 0 30px 85px;
-  list-style-type: square;
-}
-
-.error-title {
-  display: inline-block;
-  border: 2px solid red;
-  margin-top: 20px;
-  background-color: red;
-}
-
-.error-new input {
-  border: 2px solid red;
-}
-
-.error-new textarea {
-  border: 2px solid red;
-  border-bottom: 6px solid red;
-}
 
 /* エディットページ */
 .edit {
@@ -152,6 +114,49 @@ td a {
   margin: 30px;
 }
 
-.show p {
+.show-main p {
   margin: 30px 30px;
+}
+
+/* バリデーションエラー検出時 */
+
+.error {
+  font-size: 13px;
+}
+
+.error-box {
+  width: 450px;
+  background-color: #f0f0f0;
+  border: 2px solid red;
+}
+
+.error-box-item {
+  padding: 30px 0;
+}
+
+.error-box span {
+  background-color: rgb(211, 22, 22);
+  display: block;
+  width: auto;
+  padding: 7px;
+  color: #fff;
+}
+
+.error-box ul {
+  list-style-type: square;
+  padding-left: 85px;
+}
+
+/* edit入力バリデーションエラー検出時 */
+
+.show h1 {
+  font-size: 28px;
+}
+
+.show-error-new p {
+  margin-top: 10px;
+}
+
+.show-error-new a {
+  line-height: 40px;
 }
