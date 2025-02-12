@@ -91,3 +91,25 @@ td a {
   font-size: 12px;
   margin-top: 10px;
 }
+
+
+/* エディットページ */
+.edit {
+  margin: 30px;
+}
+
+.edit p {
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+
+/* showページ */
+.show {
+  font-size: 13px;
+  margin: 30px;
+}
+
+.show p {
+  margin: 30px 30px;
+}
