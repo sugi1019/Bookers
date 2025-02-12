@@ -1,44 +1,47 @@
 
 <!-- インデックスページでbooksの中身一覧表示 -->
 
-<h1>Books</h1>  
+<div class ="index">
+  <h2>Books</h2>  
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-  </tr>
-
-  <% @books.each do |book| %>
-
+  <table>
     <tr>
-      <td><%= book.title %></td>
-      <td><%= book.body %></td>
-
-      <td><%= link_to "Show", book_path(book.id) %></td>
-
-      <td><%= link_to "Edit", edit_book_path(book.id) %></td>
-
-      <td><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %></td>
+      <th>Title</th>
+      <th>Body</th>
     </tr>
 
-  <% end %>
+    <% @books.each do |book| %>
 
-</table>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.body %></td>
+
+        <td><%= link_to "Show", book_path(book.id) %></td>
+
+        <td><%= link_to "Edit", edit_book_path(book.id) %></td>
+
+        <td><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %></td>
+      </tr>
+
+    <% end %>
+
+  </table>
 
 
 
-<!-- ここから下 新規投稿コード -->
+  <!-- ここから下 新規投稿コード -->
+  <div class ="new-book">
+    <h3>New book</h3> 
+    <%= form_with model: @book, url: '/books', method: :post  do |f| %>
+      
+      <p>Title</p>
+      <%= f.text_field :title %>
 
-<h2>New book</h2> 
-<div class ="new-book">
-  <%= form_with model: @book, url: '/books', method: :post  do |f| %>
-    <p>Title</p>
-    <%= f.text_field :title %>
+      <p>Body</p>
+      <%= f.text_area :body %>
 
-    <p>Body</p>
-    <%= f.text_area :body %>
-
-    <p><%= f.submit 'Create Book' %></p>
-  <% end %>
+      <p><%= f.submit 'Create Book' %></p>
+      
+    <% end %>
+  </div>
 </div>
