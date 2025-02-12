@@ -32,16 +32,28 @@
   <!-- ここから下 新規投稿コード -->
   <div class ="new-book">
     <h3>New book</h3> 
-    <%= form_with model: @book, url: '/books', method: :post  do |f| %>
-      
-      <p>Title</p>
-      <%= f.text_field :title %>
+    <div class ="error">
+      <% if @book.errors.any? %>
+        <%= @book.errors.count %> "errors prohibited this book from being saved:"
+        <ul>
+          <% @book.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    
 
-      <p>Body</p>
-      <%= f.text_area :body %>
+      <%= form_with model: @book, url: '/books', method: :post  do |f| %>
+        
+        <p>Title</p>
+        <%= f.text_field :title %>
 
-      <p><%= f.submit 'Create Book' %></p>
-      
-    <% end %>
+        <p>Body</p>
+        <%= f.text_area :body %>
+
+        <p><%= f.submit 'Create Book' %></p>
+        
+      <% end %>
+    </div>  
   </div>
 </div>
