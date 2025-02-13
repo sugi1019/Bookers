@@ -118,6 +118,12 @@ td a {
   margin: 30px 30px;
 }
 
+/* 投稿成功時フラッシュメッセージ */
+.flash {
+  color: green;
+  margin-left: 30px;
+}
+
 /* バリデーションエラー検出時 */
 
 .error {

@@ -29,7 +29,8 @@
 
       <!-- 通常時showページ -->
   <% else %>
-    <div class="show-main">  
+    <p class ="flash"><%= flash[:notice] %></p>
+   <div class="show-main">  
       <p><b>Title: </b><%= @book.title %></p>
       <p><b>Body: </b><%= @book.body %></p>
       <%= link_to "Edit", edit_book_path(@book.id) %> | <%= link_to "Back", books_path %>
